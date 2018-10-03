@@ -199,7 +199,7 @@ Puppet::Type.type(:cups_queue).provide(:cups) do
   def options=(options_should)
     options_should.each do |key, value|
       lpadmin('-E', '-p', name, '-o', "#{key}=#{value}")
-      sleep(2)
+      sleep(5)
     end
   end
 
